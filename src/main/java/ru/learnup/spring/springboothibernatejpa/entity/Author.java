@@ -27,6 +27,7 @@ public class Author {
     private String surname;
 
     @OneToMany(mappedBy = "author_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ToString.Exclude
     private List<Book> book;
 
 }

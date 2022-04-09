@@ -30,12 +30,15 @@ public class Book {
 
     @ManyToOne
     @JoinColumn(name = "author_id")
+    @ToString.Exclude
     private Author author_id;
 
     @OneToOne(mappedBy = "book", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private StorageBook storageBook;
 
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
+    @ToString.Exclude
     private List<OrderDetails> orderDetails;
 
     @Column(nullable = false)
