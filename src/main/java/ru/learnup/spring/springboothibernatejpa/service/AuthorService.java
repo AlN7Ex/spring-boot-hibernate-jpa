@@ -5,6 +5,7 @@ import ru.learnup.spring.springboothibernatejpa.entity.Author;
 import ru.learnup.spring.springboothibernatejpa.repository.AuthorRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AuthorService {

@@ -25,7 +25,6 @@ public class Product implements Serializable {
     private String name;
 
     @Version
-    @Valid
-    @NotBlank
     private Integer version;
+
 }
