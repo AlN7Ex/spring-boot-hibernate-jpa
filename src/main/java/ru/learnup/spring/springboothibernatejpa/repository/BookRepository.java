@@ -14,4 +14,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
             "join book_shop.author a on b.author_id = a.author_id " +
             "where b.author_id = ?1", nativeQuery = true)
     List<Book> customFindAllBookByAuthorId(Integer id);
+
+    @Query(value = "select * from book_shop.book",nativeQuery = true)
+    List<Book> getBooks();
 }

@@ -18,4 +18,8 @@ public class BookService {
     public List<Book> customFindAllBookByAuthorId(Integer id) {
         return bookRepository.customFindAllBookByAuthorId(id);
     }
+
+    public List<Book> getAllBooks() {
+        return bookRepository.getBooks();
+    }
 }
