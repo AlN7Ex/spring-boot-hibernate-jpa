@@ -1,5 +1,6 @@
 package ru.learnup.spring.springboothibernatejpa.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +13,19 @@ import java.util.List;
 @Controller
 public class BookController {
 
-    BookService bookService;
+    @Autowired
+    private BookService bookService;
+
+    @GetMapping("/home")
+    public String home() {
+        return "home";
+    }
 
     @GetMapping("/books")
-    public void showAllBooks(Model model) {
-        List<Book> books = bookService.getAllBooks();
-        model.addAllAttributes(books);
+    public String showAllBooks(Model model) {
+
+        model.addAttribute("books", bookService.getAllBooks());
+
+        return "books";
     }
 }

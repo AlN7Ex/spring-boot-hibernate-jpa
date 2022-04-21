@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Books</title>
+    <style>
+        table th, table td {padding: 5px;}
+        {
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
-
+<h1>All books</h1>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Pages</th>
+        <th>Publish year</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:utext="${book.getBook_id()}"> Book ID</td>
+        <td th:utext="${book.getTitle()}"> Title</td>
+        <td th:utext="${book.getPages()}"> Pages</td>
+        <td th:utext="${book.getPublish_year()}"> Year</td>
+    </tr>
+</table>
+<br>
+<a href="/home">Go to home page</a>
 </body>
 </html>
